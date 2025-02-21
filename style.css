@@ -20,13 +20,20 @@ body {
 .input-section {
     display: flex;
     margin-bottom: 20px;
+    gap: 10px; /* Added gap for spacing */
+    align-items: center; /* Vertically align items */
+}
+
+.input-section input[type="text"],
+.input-section select { /* Style for input and select */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .input-section input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
+    flex-grow: 1; /* Input text takes more space */
+    border-radius: 4px 0 0 4px; /* Left rounded corners */
 }
 
 .input-section button {
@@ -34,7 +41,7 @@ body {
     border: none;
     background-color: #007bff;
     color: white;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -55,4 +62,24 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* Priority Styling */
+.task-list li.high-priority {
+    border-left: 5px solid red; /* Red border for high priority */
+}
+
+.task-list li.medium-priority {
+    border-left: 5px solid orange; /* Orange border for medium priority */
+}
+
+.task-list li.low-priority {
+    border-left: 5px solid green; /* Green border for low priority */
+}
+
+/* Task Details Styling (Category, Priority) */
+.task-category, .task-priority {
+    font-size: 0.85em;
+    color: #777;
+    margin-left: 10px; /* Space between text and details */
 }
