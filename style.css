@@ -1,62 +1,64 @@
 body {
-    font-family: 'Nunito Sans', sans-serif; /* Even more modern font */
+    font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #eef0f2; /* Very light gray background, almost white */
-    color: #333; /* Darker, more readable text */
-    -webkit-font-smoothing: antialiased; /* Better font rendering for webkit browsers */
-    -moz-osx-font-smoothing: grayscale; /* Better font rendering for Firefox on macOS */
+    background-color: #eef0f2;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    background-color: #fff; /* Pure white container */
-    padding: 40px; /* Increased padding again */
-    border-radius: 16px; /* Even more rounded corners */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* Deeper, softer shadow */
-    width: 95%; /* Slightly wider again */
-    max-width: 800px; /* Further increased max width */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    width: 95%;
+    max-width: 800px;
 }
 
 h1 {
-    color: #407bff; /* Vibrant blue for heading */
+    color: #407bff;
     text-align: center;
-    margin-bottom: 35px; /* More margin below heading */
-    font-weight: 800; /* Extra-bold heading */
-    font-size: 2.5rem; /* Larger heading size */
-    letter-spacing: -0.02em; /* Slightly reduce letter spacing for headings */
+    margin-bottom: 35px;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
 }
 
 .input-section {
-    display: grid; /* Use grid layout for input section */
-    grid-template-columns: 1fr auto auto auto auto; /* Define grid columns */
+    display: grid; /* Using grid layout */
+    grid-template-columns: 1fr auto auto auto auto; /* Keep grid columns */
     gap: 15px;
-    margin-bottom: 30px; /* Even more margin below input */
-    align-items: center; /* Vertically align items in grid */
+    margin-bottom: 30px;
+    align-items: center; /* Keep vertical alignment centered */
 }
 
 .input-section input[type="text"],
 .input-section select,
 .input-section input[type="date"],
 .input-section input[type="time"] {
-    padding: 14px 16px; /* Further increased input padding */
-    border: 2px solid #d9d9e3; /* Slightly thicker, softer border */
-    border-radius: 10px; /* More rounded input corners */
-    font-size: 1.1rem; /* Even larger input font */
-    color: #555; /* Slightly lighter input text color */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle inner shadow for inputs */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for input focus */
+    padding: 14px 16px;
+    border: 2px solid #d9d9e3;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #555;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Vertically align inputs in the middle of the grid row */
+    align-self: center;
 }
 
 .input-section input[type="text"]:focus,
 .input-section select:focus,
 .input-section input[type="date"]:focus,
 .input-section input[type="time"]:focus {
-    border-color: #a3bffa; /* Lighter blue on focus */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 8px rgba(102, 153, 255, 0.2); /* Focus shadow */
-    outline: none; /* Remove default focus outline */
+    border-color: #a3bffa;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 8px rgba(102, 153, 255, 0.2);
+    outline: none;
 }
 
 
@@ -66,46 +68,52 @@ h1 {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0l3.908 3.747 3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-1.013.453-1.576 0l-3.908-3.747-3.908 3.747c-.563.453-1.169.418-1.576 0-.408-.418-.436-1.17 0-1.615z"/><path d="M0 0h20v20H0z" fill="none"/></svg>'); /* More refined dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0l3.908 3.747 3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-1.013.453-1.576 0l-3.908-3.747-3.908 3.747c-.563.453-1.169.418-1.576 0-.408-.418-.436-1.17 0-1.615z"/><path d="M0 0h20v20H0z" fill="none"/></svg>');
     background-repeat: no-repeat;
-    background-position-x: 95%; /* Adjust arrow position */
+    background-position-x: 95%;
     background-position-y: 50%;
-    padding-right: 30px; /* More space for arrow */
-    border-left: 2px solid #d9d9e3; /* Keep left border for visual separation */
+    padding-right: 30px;
+    border-left: 2px solid #d9d9e3;
     border-radius: 0 10px 10px 0;
     width: auto;
-    min-width: 120px; /* Minimum width for selects */
+    min-width: 120px;
+    /* Vertically align selects in the middle of the grid row */
+    align-self: center;
 }
 
 .input-section input[type="text"] {
-    border-radius: 10px 0 0 10px; /* Rounded left corners for text input */
-    border-right: none; /* No right border for text input */
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+    /* Vertically align text input in the middle of the grid row */
+    align-self: center;
 }
 
 
 .input-section button {
-    padding: 14px 24px; /* Even more button padding */
+    padding: 14px 24px;
     border: none;
-    background-color: #407bff; /* Reverted to vibrant blue */
+    background-color: #407bff;
     color: white;
-    border-radius: 10px; /* Rounded button corners */
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: 600; /* Bolder button text */
-    font-size: 1.1rem; /* Larger button text */
-    letter-spacing: 0.01em; /* Slight letter spacing for buttons */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Button shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* More transitions */
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Vertically align button in the middle of the grid row */
+    align-self: center;
 }
 
 .input-section button:hover {
-    background-color: #2b5ec4; /* Darker blue on hover */
-    transform: translateY(-1px); /* Slight lift on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12); /* Increased shadow on hover */
+    background-color: #2b5ec4;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12);
 }
 
 .input-section button:active {
-    transform: translateY(0); /* No lift on active/click */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on active/click */
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -115,94 +123,94 @@ h1 {
 }
 
 .task-list li {
-    background-color: #fff; /* White list item background */
-    padding: 20px; /* Further increased list item padding */
-    margin-bottom: 12px; /* More margin between items */
-    border-radius: 10px; /* Rounded list item corners */
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid transparent; /* Thicker left border */
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06); /* Slightly stronger list item shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* More transitions */
-    transform: scale(1); /* Reset scale for transition */
+    border-left: 6px solid transparent;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transform: scale(1);
 }
 
 .task-list li:hover {
-    background-color: #f9f9f9; /* Slightly lighter gray on hover */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Increased shadow on hover */
-    transform: scale(1.01); /* Slight scale up on hover for interactivity */
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    transform: scale(1.01);
 }
 
 
 .task-list li button {
-    background-color: #ff6b6b; /* Brighter red delete button */
+    background-color: #ff6b6b;
     color: white;
     border: none;
-    padding: 10px 16px; /* Adjusted delete button padding */
-    border-radius: 8px; /* Rounded delete button corners */
+    padding: 10px 16px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem; /* Slightly larger delete button text */
-    font-weight: 500; /* Semi-bold delete button text */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions for delete button */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .task-list li button:hover {
-    background-color: #e05252; /* Darker red on hover */
-    transform: scale(1.05); /* Slight scale up on delete button hover */
+    background-color: #e05252;
+    transform: scale(1.05);
 }
 
 .task-list li button:active {
-    transform: scale(1); /* Reset scale on active/click */
+    transform: scale(1);
 }
 
 
 /* Priority Styling - More Vibrant Colors */
 .task-list li.high-priority {
-    background-color: #fff2f2; /* Very light red for high priority */
-    border-left-color: #ff4d4d; /* More vibrant red border */
+    background-color: #fff2f2;
+    border-left-color: #ff4d4d;
 }
 
 .task-list li.medium-priority {
     background-color: #fffaf0;
-    border-left-color: #ffc107; /* More vibrant orange/amber border */
+    border-left-color: #ffc107;
 }
 
 .task-list li.low-priority {
-    background-color: #f0fff5; /* Very light green/mint for low priority */
-    border-left-color: #32cd32; /* More vibrant lime green border */
+    background-color: #f0fff5;
+    border-left-color: #32cd32;
 }
 
 
 /* Task Details Styling - Improved Readability */
 .task-category, .task-priority, .task-reminder {
-    font-size: 0.9rem; /* Slightly larger detail text */
-    color: #777; /* Muted gray for details */
-    margin-left: 20px; /* Increased detail margin */
-    font-weight: 500; /* Semi-bold details */
+    font-size: 0.9rem;
+    color: #777;
+    margin-left: 20px;
+    font-weight: 500;
 }
 
 .task-reminder {
-    color: #28a745; /* Bootstrap success green for reminder */
-    font-weight: 700; /* Bolder reminder text */
+    color: #28a745;
+    font-weight: 700;
 }
 
 /* Task Completion Styling */
 .task-text.completed {
     text-decoration: line-through;
-    color: #999; /* Even lighter gray for completed text */
+    color: #999;
 }
 
 .task-checkbox {
-    margin-right: 20px; /* Increased checkbox margin */
-    width: 20px; /* Slightly larger checkbox */
+    margin-right: 20px;
+    width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #407bff; /* Brand blue for checkbox accent color */
+    accent-color: #407bff;
 }
 
 .task-text {
     flex-grow: 1;
-    font-size: 1.2rem; /* Even larger task text */
-    line-height: 1.5; /* Improved line height for readability */
+    font-size: 1.2rem;
+    line-height: 1.5;
 }
