@@ -1,85 +1,39 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter App - To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recruiter To-Do List</h1>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Add a new task">
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-}
+            <select id="priorityInput">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
 
-.input-section {
-    display: flex;
-    margin-bottom: 20px;
-    gap: 10px; /* Added gap for spacing */
-    align-items: center; /* Vertically align items */
-}
+            <select id="categoryInput">
+                <option value="sourcing">Candidate Sourcing</option>
+                <option value="interview">Interviews</option>
+                <option value="followup">Follow-up</option>
+                <option value="admin">Admin Tasks</option>
+                <option value="other" selected>Other</option>
+            </select>
 
-.input-section input[type="text"],
-.input-section select { /* Style for input and select */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
+            <input type="date" id="reminderDateInput">
+            <input type="time" id="reminderTimeInput">
 
-.input-section input[type="text"] {
-    flex-grow: 1; /* Input text takes more space */
-    border-radius: 4px 0 0 4px; /* Left rounded corners */
-}
-
-.input-section button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.task-list li {
-    background-color: #eee;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.task-list li button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* Priority Styling */
-.task-list li.high-priority {
-    border-left: 5px solid red; /* Red border for high priority */
-}
-
-.task-list li.medium-priority {
-    border-left: 5px solid orange; /* Orange border for medium priority */
-}
-
-.task-list li.low-priority {
-    border-left: 5px solid green; /* Green border for low priority */
-}
-
-/* Task Details Styling (Category, Priority) */
-.task-category, .task-priority {
-    font-size: 0.85em;
-    color: #777;
-    margin-left: 10px; /* Space between text and details */
-}
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <ul class="task-list" id="taskList">
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
