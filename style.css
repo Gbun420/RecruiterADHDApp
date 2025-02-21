@@ -1,115 +1,127 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    min-height: 100vh; /* Use min-height for full viewport coverage */
+    background-color: #f8f9fa; /* Light gray background */
+    color: #343a40; /* Dark gray text */
+}.container {
+    background-color: #ffffff; /* White container background */
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+    width: 90%; /* Wider container */
+    max-width: 700px; /* Increased max width */
 }
 
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
-}
-
-.input-section {
+h1 {
+    color: #212529; /* Darker heading color */
+    text-align: center;
+    margin-bottom: 25px; /* Increased margin below heading */
+    font-weight: bold; /* Bold heading */
+}.input-section {
     display: flex;
-    margin-bottom: 20px;
-    gap: 10px;
-    align-items: center;
-}
-
-.input-section input[type="text"],
-.input-section select,
-.input-section input[type="date"],
-.input-section input[type="time"] { /* Include date and time inputs */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.input-section input[type="text"] {
+    margin-bottom: 25px; /* Increased margin below input section */
+    gap: 15px; /* Increased gap */
+    align-items: stretch; /* Stretch align items */
+}.input-section input[type="text"],.input-section select,.input-section input[type="date"],.input-section input[type="time"] {
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Slightly larger font size */
+}.input-section input[type="text"] {
     flex-grow: 1;
-    border-radius: 4px 0 0 4px;
+    border-right: none; /* No right border for text input */
+    border-radius: 8px 0 0 8px; /* Rounded left corners only */
+}.input-section select,.input-section input[type="date"],.input-section input[type="time"] {
+    -webkit-appearance: none; /* Remove default appearance for selects */
+    -moz-appearance: none;
+    appearance: none; /* For modern browsers */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    padding-right: 25px; /* Make space for dropdown arrow */
+    border-left: none; /* No left border for selects, date, time */
+    border-radius: 0 8px 8px 0; /* Rounded right corners only */
+    width: auto; /* Adjust width to content */
 }
-
 .input-section button {
-    padding: 10px 15px;
+    padding: 12px 20px; /* Increased button padding */
     border: none;
-    background-color: #007bff;
+    background-color: #007bff; /* Primary blue color */
     color: white;
-    border-radius: 4px;
+    border-radius: 8px; /* Rounded button corners */
     cursor: pointer;
+    font-weight: 500; /* Semi-bold font weight for button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}.input-section button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
-
 .task-list {
-    padding-left: 0; /* Remove default padding for ul */
-}
-
-.task-list li {
-    background-color: #eee;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 4px;
+    padding-left: 0;
+    list-style: none; /* Remove default list bullets */
+}.task-list li {
+    background-color: #fff; /* White list item background */
+    padding: 15px 20px; /* Increased list item padding */
+    margin-bottom: 10px; /* Increased margin between list items */
+    border-radius: 8px; /* Rounded corners for list items */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 5px solid transparent; /* Default left border to allow color change */
+    border-left: 5px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}.task-list li:hover {
+    background-color: #f0f0f0; /* Lighter gray on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07); /* Slightly larger shadow on hover */
 }
-
 .task-list li button {
-    background-color: #dc3545;
+    background-color: #e74c3c; /* Red delete button */
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 8px 12px; /* Adjusted delete button padding */
+    border-radius: 6px; /* Rounded delete button corners */
     cursor: pointer;
-}
-
-/* Priority Styling with Background Colors */
-.task-list li.high-priority {
-    background-color: #ffe0e0; /* Light red background for high priority */
-    border-left-color: red;
-}
-
-.task-list li.medium-priority {
-    background-color: #fff8e0; /* Light orange background for medium priority */
-    border-left-color: orange;
-}
-
-.task-list li.low-priority {
-    background-color: #e0ffe0; /* Light green background for low priority */
-    border-left-color: green;
+    font-size: 0.9rem; /* Slightly smaller delete button text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}.task-list li button:hover {
+    background-color: #c0392b; /* Darker red on hover */
 }
 
 
-/* Task Details Styling (Category, Priority, Reminder) */
-.task-category, .task-priority, .task-reminder {
-    font-size: 0.85em;
-    color: #777;
-    margin-left: 10px;
+/* Priority Styling with Background and Border */.task-list li.high-priority {
+    background-color: #fff0f0; /* Very light red for high priority */
+    border-left-color: #e74c3c; /* Red border for high priority */
+}.task-list li.medium-priority {
+    background-color: #fffaf0; /* Light beige for medium priority */
+    border-left-color: #f39c12; /* Orange border for medium priority */
+}.task-list li.low-priority {
+    background-color: #f0fff0; /* Very light green for low priority */
+    border-left-color: #2ecc71; /* Green border for low priority */
 }
 
-.task-reminder {
-    color: #008000;
-    font-weight: bold;
+
+/* Task Details Styling (Category, Priority, Reminder) */.task-category,.task-priority,.task-reminder {
+    font-size: 0.85rem;
+    color: #6c757d; /* Muted gray color for details */
+    margin-left: 15px; /* Increased margin */
+}.task-reminder {
+    color: #155724; /* Darker green for reminder */
+    font-weight: 600; /* Slightly bolder reminder text */
 }
 
-/* Task Completion Styling */
-.task-text.completed {
-    text-decoration: line-through; /* Strikethrough for completed tasks */
-    color: #aaa; /* Faded text color for completed tasks */
-}
-
-.task-checkbox {
-    margin-right: 10px; /* Space between checkbox and text */
-}
-
-.task-text {
-    flex-grow: 1; /* Allow task text to take up available space */
+/* Task Completion Styling */.task-text.completed {
+    text-decoration: line-through;
+    color: #adb5bd; /* Lighter gray for completed text */
+}.task-checkbox {
+    margin-right: 15px; /* Increased checkbox margin */
+    width: 18px; /* Slightly larger checkbox */
+    height: 18px;
+    cursor: pointer;
+}.task-text {
+    flex-grow: 1;
+    font-size: 1.1rem; /* Slightly larger task text */
 }
