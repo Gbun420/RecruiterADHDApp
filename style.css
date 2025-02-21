@@ -1,127 +1,208 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-family: 'Nunito Sans', sans-serif; /* Even more modern font */
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Use min-height for full viewport coverage */
-    background-color: #f8f9fa; /* Light gray background */
-    color: #343a40; /* Dark gray text */
-}.container {
-    background-color: #ffffff; /* White container background */
-    padding: 30px; /* Increased padding */
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
-    width: 90%; /* Wider container */
-    max-width: 700px; /* Increased max width */
+    min-height: 100vh;
+    background-color: #eef0f2; /* Very light gray background, almost white */
+    color: #333; /* Darker, more readable text */
+    -webkit-font-smoothing: antialiased; /* Better font rendering for webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Better font rendering for Firefox on macOS */
+}
+
+.container {
+    background-color: #fff; /* Pure white container */
+    padding: 40px; /* Increased padding again */
+    border-radius: 16px; /* Even more rounded corners */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); /* Deeper, softer shadow */
+    width: 95%; /* Slightly wider again */
+    max-width: 800px; /* Further increased max width */
 }
 
 h1 {
-    color: #212529; /* Darker heading color */
+    color: #407bff; /* Vibrant blue for heading */
     text-align: center;
-    margin-bottom: 25px; /* Increased margin below heading */
-    font-weight: bold; /* Bold heading */
-}.input-section {
-    display: flex;
-    margin-bottom: 25px; /* Increased margin below input section */
-    gap: 15px; /* Increased gap */
-    align-items: stretch; /* Stretch align items */
-}.input-section input[type="text"],.input-section select,.input-section input[type="date"],.input-section input[type="time"] {
-    padding: 12px; /* Increased padding */
-    border: 1px solid #ced4da; /* Light gray border */
-    border-radius: 8px; /* Rounded corners for inputs */
-    font-size: 1rem; /* Slightly larger font size */
-}.input-section input[type="text"] {
-    flex-grow: 1;
-    border-right: none; /* No right border for text input */
-    border-radius: 8px 0 0 8px; /* Rounded left corners only */
-}.input-section select,.input-section input[type="date"],.input-section input[type="time"] {
-    -webkit-appearance: none; /* Remove default appearance for selects */
+    margin-bottom: 35px; /* More margin below heading */
+    font-weight: 800; /* Extra-bold heading */
+    font-size: 2.5rem; /* Larger heading size */
+    letter-spacing: -0.02em; /* Slightly reduce letter spacing for headings */
+}
+
+.input-section {
+    display: grid; /* Use grid layout for input section */
+    grid-template-columns: 1fr auto auto auto auto; /* Define grid columns */
+    gap: 15px;
+    margin-bottom: 30px; /* Even more margin below input */
+    align-items: center; /* Vertically align items in grid */
+}
+
+.input-section input[type="text"],
+.input-section select,
+.input-section input[type="date"],
+.input-section input[type="time"] {
+    padding: 14px 16px; /* Further increased input padding */
+    border: 2px solid #d9d9e3; /* Slightly thicker, softer border */
+    border-radius: 10px; /* More rounded input corners */
+    font-size: 1.1rem; /* Even larger input font */
+    color: #555; /* Slightly lighter input text color */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); /* Subtle inner shadow for inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for input focus */
+}
+
+.input-section input[type="text"]:focus,
+.input-section select:focus,
+.input-section input[type="date"]:focus,
+.input-section input[type="time"]:focus {
+    border-color: #a3bffa; /* Lighter blue on focus */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 8px rgba(102, 153, 255, 0.2); /* Focus shadow */
+    outline: none; /* Remove default focus outline */
+}
+
+
+.input-section select,
+.input-section input[type="date"],
+.input-section input[type="time"] {
+    -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none; /* For modern browsers */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0l3.908 3.747 3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-1.013.453-1.576 0l-3.908-3.747-3.908 3.747c-.563.453-1.169.418-1.576 0-.408-.418-.436-1.17 0-1.615z"/><path d="M0 0h20v20H0z" fill="none"/></svg>'); /* More refined dropdown arrow */
     background-repeat: no-repeat;
-    background-position-x: 100%;
-    background-position-y: 5px;
-    padding-right: 25px; /* Make space for dropdown arrow */
-    border-left: none; /* No left border for selects, date, time */
-    border-radius: 0 8px 8px 0; /* Rounded right corners only */
-    width: auto; /* Adjust width to content */
+    background-position-x: 95%; /* Adjust arrow position */
+    background-position-y: 50%;
+    padding-right: 30px; /* More space for arrow */
+    border-left: 2px solid #d9d9e3; /* Keep left border for visual separation */
+    border-radius: 0 10px 10px 0;
+    width: auto;
+    min-width: 120px; /* Minimum width for selects */
 }
+
+.input-section input[type="text"] {
+    border-radius: 10px 0 0 10px; /* Rounded left corners for text input */
+    border-right: none; /* No right border for text input */
+}
+
+
 .input-section button {
-    padding: 12px 20px; /* Increased button padding */
+    padding: 14px 24px; /* Even more button padding */
     border: none;
-    background-color: #007bff; /* Primary blue color */
+    background-color: #407bff; /* Reverted to vibrant blue */
     color: white;
-    border-radius: 8px; /* Rounded button corners */
+    border-radius: 10px; /* Rounded button corners */
     cursor: pointer;
-    font-weight: 500; /* Semi-bold font weight for button text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}.input-section button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    font-weight: 600; /* Bolder button text */
+    font-size: 1.1rem; /* Larger button text */
+    letter-spacing: 0.01em; /* Slight letter spacing for buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Button shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* More transitions */
 }
+
+.input-section button:hover {
+    background-color: #2b5ec4; /* Darker blue on hover */
+    transform: translateY(-1px); /* Slight lift on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12); /* Increased shadow on hover */
+}
+
+.input-section button:active {
+    transform: translateY(0); /* No lift on active/click */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on active/click */
+}
+
+
 .task-list {
     padding-left: 0;
-    list-style: none; /* Remove default list bullets */
-}.task-list li {
+    list-style: none;
+}
+
+.task-list li {
     background-color: #fff; /* White list item background */
-    padding: 15px 20px; /* Increased list item padding */
-    margin-bottom: 10px; /* Increased margin between list items */
-    border-radius: 8px; /* Rounded corners for list items */
+    padding: 20px; /* Further increased list item padding */
+    margin-bottom: 12px; /* More margin between items */
+    border-radius: 10px; /* Rounded list item corners */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 5px solid transparent;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-}.task-list li:hover {
-    background-color: #f0f0f0; /* Lighter gray on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07); /* Slightly larger shadow on hover */
+    border-left: 6px solid transparent; /* Thicker left border */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06); /* Slightly stronger list item shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* More transitions */
+    transform: scale(1); /* Reset scale for transition */
 }
+
+.task-list li:hover {
+    background-color: #f9f9f9; /* Slightly lighter gray on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Increased shadow on hover */
+    transform: scale(1.01); /* Slight scale up on hover for interactivity */
+}
+
+
 .task-list li button {
-    background-color: #e74c3c; /* Red delete button */
+    background-color: #ff6b6b; /* Brighter red delete button */
     color: white;
     border: none;
-    padding: 8px 12px; /* Adjusted delete button padding */
-    border-radius: 6px; /* Rounded delete button corners */
+    padding: 10px 16px; /* Adjusted delete button padding */
+    border-radius: 8px; /* Rounded delete button corners */
     cursor: pointer;
-    font-size: 0.9rem; /* Slightly smaller delete button text */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}.task-list li button:hover {
-    background-color: #c0392b; /* Darker red on hover */
+    font-size: 1rem; /* Slightly larger delete button text */
+    font-weight: 500; /* Semi-bold delete button text */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions for delete button */
+}
+
+.task-list li button:hover {
+    background-color: #e05252; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale up on delete button hover */
+}
+
+.task-list li button:active {
+    transform: scale(1); /* Reset scale on active/click */
 }
 
 
-/* Priority Styling with Background and Border */.task-list li.high-priority {
-    background-color: #fff0f0; /* Very light red for high priority */
-    border-left-color: #e74c3c; /* Red border for high priority */
-}.task-list li.medium-priority {
-    background-color: #fffaf0; /* Light beige for medium priority */
-    border-left-color: #f39c12; /* Orange border for medium priority */
-}.task-list li.low-priority {
-    background-color: #f0fff0; /* Very light green for low priority */
-    border-left-color: #2ecc71; /* Green border for low priority */
+/* Priority Styling - More Vibrant Colors */
+.task-list li.high-priority {
+    background-color: #fff2f2; /* Very light red for high priority */
+    border-left-color: #ff4d4d; /* More vibrant red border */
+}
+
+.task-list li.medium-priority {
+    background-color: #fffaf0;
+    border-left-color: #ffc107; /* More vibrant orange/amber border */
+}
+
+.task-list li.low-priority {
+    background-color: #f0fff5; /* Very light green/mint for low priority */
+    border-left-color: #32cd32; /* More vibrant lime green border */
 }
 
 
-/* Task Details Styling (Category, Priority, Reminder) */.task-category,.task-priority,.task-reminder {
-    font-size: 0.85rem;
-    color: #6c757d; /* Muted gray color for details */
-    margin-left: 15px; /* Increased margin */
-}.task-reminder {
-    color: #155724; /* Darker green for reminder */
-    font-weight: 600; /* Slightly bolder reminder text */
+/* Task Details Styling - Improved Readability */
+.task-category, .task-priority, .task-reminder {
+    font-size: 0.9rem; /* Slightly larger detail text */
+    color: #777; /* Muted gray for details */
+    margin-left: 20px; /* Increased detail margin */
+    font-weight: 500; /* Semi-bold details */
 }
 
-/* Task Completion Styling */.task-text.completed {
+.task-reminder {
+    color: #28a745; /* Bootstrap success green for reminder */
+    font-weight: 700; /* Bolder reminder text */
+}
+
+/* Task Completion Styling */
+.task-text.completed {
     text-decoration: line-through;
-    color: #adb5bd; /* Lighter gray for completed text */
-}.task-checkbox {
-    margin-right: 15px; /* Increased checkbox margin */
-    width: 18px; /* Slightly larger checkbox */
-    height: 18px;
+    color: #999; /* Even lighter gray for completed text */
+}
+
+.task-checkbox {
+    margin-right: 20px; /* Increased checkbox margin */
+    width: 20px; /* Slightly larger checkbox */
+    height: 20px;
     cursor: pointer;
-}.task-text {
+    accent-color: #407bff; /* Brand blue for checkbox accent color */
+}
+
+.task-text {
     flex-grow: 1;
-    font-size: 1.1rem; /* Slightly larger task text */
+    font-size: 1.2rem; /* Even larger task text */
+    line-height: 1.5; /* Improved line height for readability */
 }
