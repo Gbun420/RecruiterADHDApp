@@ -1,4 +1,92 @@
-/* ... previous CSS ... */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+.input-section {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-section input[type="text"],
+.input-section select,
+.input-section input[type="date"],
+.input-section input[type="time"] { /* Include date and time inputs */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.input-section input[type="text"] {
+    flex-grow: 1;
+    border-radius: 4px 0 0 4px;
+}
+
+.input-section button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-list {
+    padding-left: 0; /* Remove default padding for ul */
+}
+
+.task-list li {
+    background-color: #eee;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid transparent; /* Default left border to allow color change */
+}
+
+.task-list li button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Priority Styling with Background Colors */
+.task-list li.high-priority {
+    background-color: #ffe0e0; /* Light red background for high priority */
+    border-left-color: red;
+}
+
+.task-list li.medium-priority {
+    background-color: #fff8e0; /* Light orange background for medium priority */
+    border-left-color: orange;
+}
+
+.task-list li.low-priority {
+    background-color: #e0ffe0; /* Light green background for low priority */
+    border-left-color: green;
+}
+
 
 /* Task Details Styling (Category, Priority, Reminder) */
 .task-category, .task-priority, .task-reminder {
@@ -8,6 +96,20 @@
 }
 
 .task-reminder {
-    color: #008000; /* Green color for reminder text */
-    font-weight: bold; /* Make reminder text bold */
+    color: #008000;
+    font-weight: bold;
+}
+
+/* Task Completion Styling */
+.task-text.completed {
+    text-decoration: line-through; /* Strikethrough for completed tasks */
+    color: #aaa; /* Faded text color for completed tasks */
+}
+
+.task-checkbox {
+    margin-right: 10px; /* Space between checkbox and text */
+}
+
+.task-text {
+    flex-grow: 1; /* Allow task text to take up available space */
 }
